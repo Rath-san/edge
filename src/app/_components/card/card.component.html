@@ -1,0 +1,10 @@
+<ng-container *ngIf="!inline; else cardInlineTemplate">
+  <p>
+    card works!
+  </p>
+</ng-container>
+<ng-template #cardInlineTemplate>
+  <p>
+    inline card works!
+  </p>
+</ng-template>
