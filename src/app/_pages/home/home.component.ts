@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from '../../_services/main.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  movies: Observable<any>;
+
+  constructor(
+    private _mainService: MainService
+  ) {
+    this.movies = this._mainService.$movies;
+  }
 
   ngOnInit() {
+    this._mainService.getMovies();
   }
 
 }

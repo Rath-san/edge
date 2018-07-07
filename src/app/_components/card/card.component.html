@@ -1,8 +1,23 @@
 <ng-container *ngIf="!inline; else cardInlineTemplate">
-  <p>
-    card works!
-  </p>
+  <div class="card">
+    <img class="card__img" [src]="movie.Poster" alt="">
+    <div class="card__body card__body--overlay">
+      <div class="card__fav">
+        fav
+      </div>
+      <div class="card__title">
+        {{ movie.Title }}
+      </div>
+    </div>
+
+  </div>
 </ng-container>
+
+
+
+
+
+
 <ng-template #cardInlineTemplate>
   <p>
     inline card works!

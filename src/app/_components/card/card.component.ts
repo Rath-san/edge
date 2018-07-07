@@ -7,6 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  @Input() movie;
+
   _inline: boolean;
 
   @Input('inline')

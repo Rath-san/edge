@@ -1,3 +1,7 @@
 <p>
-  home works!
+  home works!1
 </p>
+
+<div class="grid-container">
+  <app-card *ngFor="let movie of movies | async as list" [movie]="movie"></app-card>
+</div>

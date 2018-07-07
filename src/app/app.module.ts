@@ -11,6 +11,9 @@ import { SearchComponent } from './_components/search/search.component';
 import { CardComponent } from './_components/card/card.component';
 import { PaginationComponent } from './_components/pagination/pagination.component';
 import { PageNotFoundComponent } from './_pages/errors/page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http'
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { PageNotFoundComponent } from './_pages/errors/page-not-found/page-not-f
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

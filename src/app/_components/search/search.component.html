@@ -1,3 +1,4 @@
-<p>
-  search works!
-</p>
+
+    <label for="searchInput">search</label>
+    <input [(ngModel)]="query" type="search" name="" id="searchInput" placeholder="search">
+    <button type="submit" (click)="updateSearchQuery()">search</button>
