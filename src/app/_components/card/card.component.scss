@@ -81,7 +81,9 @@
             stroke: #000000;
         }
         &.btn--active {
-            fill: #000000;
+            svg {
+                fill: #000000;
+            }
         }
     }
 }

@@ -21,19 +21,23 @@ export class FavService {
     return this._readLocalStorage();
   }
 
-  public set(id: string): void {
+  public set(id: string): boolean {
     const currentMovies = this.$favMovies.getValue();
     let newMovies;
+    let added;
 
     if (currentMovies.some(s => s === id)) {
-      const dupIndex = currentMovies.indexOf(id);
+      const dupIndex = currentMovies.indexOf(id); //remove from fav
       currentMovies.splice(dupIndex, 1);
       newMovies = currentMovies;
+      this.$favMovies.next(newMovies);
+      added = false;
     } else {
-      newMovies = [id, ...currentMovies];
+      newMovies = [id, ...currentMovies]; //add tofav
+      added = true;
     }
     this.$favMovies.next(newMovies);
-
+    return added;
   }
 
   private _updateLocalStorage(x: string[]) {
@@ -44,6 +48,14 @@ export class FavService {
 
   private _readLocalStorage() {
     return JSON.parse(localStorage.getItem('edge::favMovies'));
+  }
+
+  public checkIfFavourute(id): boolean {
+    if(this._readLocalStorage().includes(id)){
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }

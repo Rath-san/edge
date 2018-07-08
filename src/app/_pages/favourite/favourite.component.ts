@@ -4,6 +4,7 @@ import { MainService } from '../../_services/main.service';
 import { ApiService } from '../../_services/api.service';
 import { BehaviorSubject } from 'rxjs';
 import { tap, take } from 'rxjs/operators';
+import { Movie } from '../../_models/movie';
 
 @Component({
   selector: 'app-favourite',
@@ -13,7 +14,7 @@ import { tap, take } from 'rxjs/operators';
 export class FavouriteComponent implements OnInit {
 
   _favMovies = [];
-  $favMovies: BehaviorSubject<any> = new BehaviorSubject<any>([1, 2 ,3])
+  $favMovies: BehaviorSubject<any> = new BehaviorSubject<any>([])
 
   constructor(
     private _favService: FavService,
@@ -37,18 +38,18 @@ export class FavouriteComponent implements OnInit {
     const params = this._favService.get()
     const favMovies = this._favService.$favMovies.getValue();
     favMovies.forEach(x => {
-        this.seachMovie(x);
+      this.seachMovie(x);
     })
 
   }
 
-  public seachMovie(title) {
+  public seachMovie(id: string) {
     // primise.all tutaj
-    this._apiService.getMovieByID(title)
+    this._apiService.getMovieByID(id)
       .pipe(
         tap((x: any) => {
-          console.log(x);
-          this._favMovies.push(x)
+          const favMovie = new Movie(x.Title, x.Year, x.imdbID, x.Type, x.Poster, true)
+          this._favMovies.push(favMovie);
           this.$favMovies.next(this._favMovies);
         }),
         take(1)

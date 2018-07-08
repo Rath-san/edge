@@ -22,7 +22,7 @@ export class Movie {
     ) {
         this._title = title;
         this._year = year;
-        this._imdbID = title;
+        this._imdbID = imdbID;
         this._type = type;
         this._poster = poster;
         this._favourite = favourite;
@@ -36,6 +36,10 @@ export class Movie {
         return this._year;
     }
 
+    get imdbID() {
+        return this._imdbID;
+    }
+
     get type() {
         return this._type;
     }
@@ -46,6 +50,10 @@ export class Movie {
 
     get favourite() {
         return this._favourite;
+    }
+
+    public favourites(v) {
+        this._favourite = v;
     }
 
 }

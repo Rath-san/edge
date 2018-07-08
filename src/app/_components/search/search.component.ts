@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
-  query: string = 'deadpool';
+  query: string = 'batman';
 
   constructor(
     private _mainService: MainService,
