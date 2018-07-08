@@ -29,13 +29,6 @@
     }
     &__fav {
         text-align: right;
-        svg {
-            fill: none;
-            stroke: #000000;
-        }
-        &.active {
-            fill: #000000;
-        }
     }
     &:hover {
         .card {
@@ -48,13 +41,10 @@
         }
     }
     &.card--inline {
-        display: flex;
-// flex-direction: row
-position: static;
+        display: flex; // flex-direction: row
+        position: static;
         .card {
-            &__fav {
-
-            }
+            &__fav {}
             &__img {
                 width: 50px;
                 transition: none;
@@ -82,3 +72,16 @@ position: static;
 }
 
 // 272*1.3
+.btn {
+    border: none;
+    background-color: transparent;
+    &--fav {
+        svg {
+            fill: none;
+            stroke: #000000;
+        }
+        &.btn--active {
+            fill: #000000;
+        }
+    }
+}

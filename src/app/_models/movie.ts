@@ -18,7 +18,7 @@ export class Movie {
         imdbID: string,
         type: Type,
         poster: string,
-        favourite: boolean;
+        favourite: boolean
     ) {
         this._title = title;
         this._year = year;
