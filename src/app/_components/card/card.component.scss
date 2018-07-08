@@ -24,11 +24,18 @@
         bottom: 0;
         background-image: linear-gradient(to bottom, #ffffff00, #000000);
         color: white;
-        opacity: 0;
+        opacity: 1;
         transition: opacity 150ms ease-in-out;
     }
     &__fav {
         text-align: right;
+        svg {
+            fill: none;
+            stroke: #000000;
+        }
+        &.active {
+            fill: #000000;
+        }
     }
     &:hover {
         .card {
@@ -37,6 +44,38 @@
             }
             &__body {
                 opacity: 1;
+            }
+        }
+    }
+    &.card--inline {
+        display: flex;
+// flex-direction: row
+position: static;
+        .card {
+            &__fav {
+
+            }
+            &__img {
+                width: 50px;
+                transition: none;
+                position: static;
+            }
+            &__body {
+                transition: none;
+                opacity: 1;
+                background-image: none;
+                position: static;
+                color: #000000;
+            }
+        }
+        &:hover {
+            .card {
+                &__img {
+                    transform: none;
+                }
+                &__body {
+                    opacity: 1;
+                }
             }
         }
     }

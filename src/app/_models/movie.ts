@@ -10,6 +10,7 @@ export class Movie {
     _imdbID: string;
     _type: Type;
     _poster: string;
+    _favourite: boolean;
 
     constructor(
         title: string,
@@ -17,12 +18,14 @@ export class Movie {
         imdbID: string,
         type: Type,
         poster: string,
+        favourite: boolean;
     ) {
         this._title = title;
         this._year = year;
         this._imdbID = title;
         this._type = type;
         this._poster = poster;
+        this._favourite = favourite;
     }
 
     get title() {
@@ -39,6 +42,10 @@ export class Movie {
 
     get poster() {
         return this._poster;
+    }
+
+    get favourite() {
+        return this._favourite;
     }
 
 }

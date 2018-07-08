@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FavService } from '../../_services/fav.service';
 
 @Component({
   selector: 'app-card',
@@ -16,13 +17,27 @@ export class CardComponent implements OnInit {
     this._inline = v;
   }
 
-  constructor() { }
+  constructor(
+    private _favService: FavService
+  ) { }
 
   ngOnInit(): void {
   }
 
   get inline(): boolean {
     return this._inline;
+  }
+
+  get fav() {
+    return true;
+  }
+
+  // set fav(v: boolean) {
+
+  // }
+
+  public addToFav(id: string) {
+    this._favService.set(id);
   }
 
 }

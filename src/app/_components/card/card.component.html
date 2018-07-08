@@ -1,9 +1,16 @@
+
+
 <ng-container *ngIf="!inline; else cardInlineTemplate">
   <div class="card">
-    <img class="card__img" [src]="movie.Poster" alt="">
+    <img class="card__img" src="{{movie.Poster}}" alt="">
     <div class="card__body card__body--overlay">
       <div class="card__fav">
-        fav
+        <button [ngClass]="{'active': fav}" (click)="addToFav(movie.imdbID)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12px" preserveAspectRatio="xMidYMid meet" viewBox="-2 -2 36 33" xml:space="preserve">
+            <path d="M15.6,28.1l12.5-12.5c3.5-3.5,3.5-9,0-12.5c-3.5-3.5-9-3.5-12.5,0c-3.5-3.5-9-3.5-12.5,0c-3.5,3.5-3.5,9,0,12.5L15.6,28.1z"
+            />
+          </svg>
+        </button>
       </div>
       <div class="card__title">
         {{ movie.Title }}
@@ -13,13 +20,23 @@
   </div>
 </ng-container>
 
-
-
-
-
-
 <ng-template #cardInlineTemplate>
-  <p>
-    inline card works!
-  </p>
+  <div class="card card--inline">
+    <div class="card__fav">
+      <button [ngClass]="{'favourite': fav}" (click)="addToFav(movie.imdbID)">
+        fav
+      </button>
+    </div>
+    <img class="card__img" src="{{movie.Poster}}" alt="">
+    <div class="card__body card__body--overlay">
+      <div class="card__title">
+        <span>{{ movie.Title }}</span>
+        <span>{{ movie.Year }}</span>
+      </div>
+      <div class="card__type">
+        type: {{ movie.Type }}
+      </div>
+    </div>
+  </div>
+
 </ng-template>

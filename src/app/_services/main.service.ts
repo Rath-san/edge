@@ -18,11 +18,10 @@ export class MainService {
   }
 
   public getMovies(title?: string): void {
-    this._apiService.getData(title)
+    this._apiService.getMovie(title)
       .pipe(
 
         tap((search: any) => {
-          console.log(search.Search)
           this.$movies.next(search.Search);
         }),
         take(1)

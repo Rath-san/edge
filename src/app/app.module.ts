@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './_pages/errors/page-not-found/page-not-f
 import { HttpClientModule } from '@angular/common/http'
 
 import { FormsModule } from '@angular/forms';
+import { FavService } from './_services/fav.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    FavService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

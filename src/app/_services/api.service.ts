@@ -16,7 +16,7 @@ export class ApiService {
     private _http: HttpClient
   ) { }
 
-  getData(title?: string) {
+  getMovie(title?: string) {
     let params;
     if (title) {
       params = {
@@ -25,4 +25,16 @@ export class ApiService {
     }
     return this._http.get(this.apiRoot, { params });
   }
+
+  getMovieByID(id: string) {
+    let params
+    if(id) {
+      params = {
+        'i': id
+      }
+    }
+    return this._http.get(this.apiRoot, { params });
+  }
+
+
 }

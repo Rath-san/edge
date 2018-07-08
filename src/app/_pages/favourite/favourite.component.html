@@ -1,2 +1,10 @@
-<app-card [inline]="true"></app-card>
+<h1>
+    Favs works
+</h1>
+
+<p>
+    favourite movies {{favouriteMoviesLength}} // change
+</p>
+
+<app-card *ngFor="let movie of $favMovies | async as list" [inline]="true" [movie]="movie"></app-card>
 

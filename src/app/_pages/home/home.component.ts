@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._mainService.getMovies();
+    this._mainService.getMovies('deadpool');
   }
 
 }
