@@ -1,3 +1,26 @@
-<p>
-  pagination works!
-</p>
+<ul class="list--inline">
+  <li class="list__item">
+    <button (click)="goFirst()" [disabled]="firstPageDeactivated">first</button>
+  </li>
+  <li class="list__item">
+      <button (click)="goPrev()" [disabled]="firstPageDeactivated">prev</button>
+    </li>
+  <li class="list__item">
+    <button (click)="goPage(1)">1</button>
+  </li>
+  <li class="list__item">
+    <button (click)="goPage(2)">2</button>
+  </li>
+  <li class="list__item">
+    <button (click)="goPage(3)">3</button>
+  </li>
+  <li class="list__item">
+    <button>...</button>
+  </li>
+  <li class="list__item">
+      <button (click)="goNext()" [disabled]="lastPageDeactivated">next</button>
+    </li>
+  <li class="list__item">
+    <button (click)="goLast()" [disabled]="lastPageDeactivated">last</button>
+  </li>
+</ul>

@@ -1,0 +1,15 @@
+
+:host {
+    width: 100%;
+    display: block;
+}
+.list {
+    &--inline {
+        list-style-type: none;
+        padding-left: 0;
+        text-align: center;
+        .list__item {
+            display: inline-block;
+        }
+    }
+}

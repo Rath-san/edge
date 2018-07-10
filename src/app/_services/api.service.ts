@@ -16,11 +16,12 @@ export class ApiService {
     private _http: HttpClient
   ) { }
 
-  getMovie(title?: string) {
+  getMovie(title?: string, page?:number) {
     let params;
     if (title) {
       params = {
-        's': title
+        's': title,
+        'page': page
       }
     }
     return this._http.get(this.apiRoot, { params });

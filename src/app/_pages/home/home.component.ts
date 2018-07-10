@@ -10,15 +10,17 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   movies: Observable<any>;
+  resultsCount: Observable<number>;
 
   constructor(
     private _mainService: MainService
   ) {
     this.movies = this._mainService.$movies;
+    this.resultsCount = this._mainService.$resultsCount;
   }
 
   ngOnInit() {
-    this._mainService.getMovies('deadpool');
+    this._mainService.getMovies('batman');
   }
 
 }
