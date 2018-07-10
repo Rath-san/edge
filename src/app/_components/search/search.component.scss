@@ -1,0 +1,20 @@
+@import '../../../styles/abstract/variables';
+
+:host {
+    display: block;
+    position: relative;
+    display: flex;
+}
+
+button {
+    border-left-width: 0;
+    border-radius: 0;
+    border-color: $grey;
+    cursor: pointer;
+}
+
+input {
+    border-color: $grey;
+    padding: 8px;
+}
+

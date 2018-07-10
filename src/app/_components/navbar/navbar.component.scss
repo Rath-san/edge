@@ -6,9 +6,15 @@
     max-width: 1366px;
     margin: auto;
     border-bottom: 1px solid $grey-a;
+    align-items: center;
+    > * {
+        flex-grow: 0;
+        flex-basis: 33%;
+    }
 }
 
 .fav-button {
+    text-align: left;
     border: none;
     svg {
         fill: none;
@@ -20,4 +26,15 @@
             stroke: none;
         }
     }
+}
+
+.logo {
+    text-align: center;
+    svg {
+        fill: $white;
+    }
+}
+
+.search {
+    text-align: right;
 }

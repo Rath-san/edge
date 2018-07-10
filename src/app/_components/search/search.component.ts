@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
-  query: string = 'batman';
+  query: string;
 
   constructor(
     private _mainService: MainService,
@@ -22,10 +22,10 @@ export class SearchComponent implements OnInit {
 
   updateSearchQuery(): void {
     if (this.query) {
-      console.log(this.query);
-      this._mainService.getMovies(this.query);
+      this._mainService.$searchQuery.next(this.query);
+      this._mainService.$activePage.next(1);
+      this._goTo();
     }
-    // this._goTo();
   }
 
   private _goTo() {

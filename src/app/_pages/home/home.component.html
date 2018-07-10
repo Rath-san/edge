@@ -1,9 +1,20 @@
-<p>
-  Search results for "<span>{{ searchQuery | async }}</span>" <br>
-  <small>
-    with total of {{ resultsCount | async }} finds ({{ resultsPages | async}} pages)
-  </small>
-</p>
+<ng-container *ngIf="error; else errorTemplate">
+  <p>
+    {{ errors }}
+  </p>
+</ng-container>
+<ng-template #errorTemplate>
+  <p>
+    Search results for "<span>{{ searchQuery | async }}</span>"
+    <br>
+    <small>
+      with total of {{ resultsCount | async }} finds ({{ resultsPages | async}} pages)
+    </small>
+  </p>
+</ng-template>
+
+
+
 
 <div class="grid-container">
   <app-card *ngFor="let movie of movies | async as list" [movie]="movie"></app-card>
