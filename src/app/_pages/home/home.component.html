@@ -1,20 +1,15 @@
-<ng-container *ngIf="error; else errorTemplate">
-  <p>
+<p class="message">
+  <ng-container *ngIf="error; else errorTemplate">
     {{ errors }}
+  </ng-container>
   </p>
-</ng-container>
 <ng-template #errorTemplate>
-  <p>
-    Search results for "<span>{{ searchQuery | async }}</span>"
+    Search results for "<em><strong>{{ searchQuery | async }}</strong></em>"
     <br>
     <small>
       with total of {{ resultsCount | async }} finds ({{ resultsPages | async}} pages)
     </small>
-  </p>
 </ng-template>
-
-
-
 
 <div class="grid-container">
   <app-card *ngFor="let movie of movies | async as list" [movie]="movie"></app-card>

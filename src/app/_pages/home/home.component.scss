@@ -1,3 +1,4 @@
+@import '../../../styles/abstract/variables';
 :host {
     display: block;
     padding: 0 15px;
@@ -10,4 +11,9 @@
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 60px;
     max-width: 1600px;
+}
+
+.message {
+    color: $brand-primary;
+    font-size: 40px;
 }
