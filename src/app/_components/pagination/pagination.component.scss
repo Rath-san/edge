@@ -1,8 +1,9 @@
-
+@import '../../../styles/abstract/variables';
 :host {
     width: 100%;
     display: block;
 }
+
 .list {
     &--inline {
         list-style-type: none;
@@ -10,6 +11,25 @@
         text-align: center;
         .list__item {
             display: inline-block;
+            + .list__item {
+                margin-left: 5px;
+            }
         }
+    }
+}
+
+button {
+    padding: 8px 16px;
+    text-transform: capitalize;
+    background-color: $grey-1;
+    &.dots {
+        border-width: 0px;
+        background-color: transparent;
+    }
+    &:disabled {
+        border-color: desaturate($brand-primary, 50%);
+        color: desaturate($brand-primary, 50%);
+        background-color: transparent;
+        cursor: not-allowed;
     }
 }
