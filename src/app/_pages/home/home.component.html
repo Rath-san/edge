@@ -1,5 +1,8 @@
 <p>
-  searched for phrase "search query" with total of {{ resultsCount | async }} () results
+  Search results for "<span>{{ searchQuery | async }}</span>" <br>
+  <small>
+    with total of {{ resultsCount | async }} finds ({{ resultsPages | async}} pages)
+  </small>
 </p>
 
 <div class="grid-container">
