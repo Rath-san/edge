@@ -1,0 +1,15 @@
+@import '../../../styles/abstract/variables';
+
+:host {
+    display: block;
+    padding: 0 15px;
+    margin: auto;
+    max-width: 1366px;
+
+}
+
+.section-header {
+    font-size: 40px;
+    color: $brand-primary;
+    font-weight: lighter;
+}

@@ -1,4 +1,23 @@
+@import '../../../styles/abstract/variables';
 .navbar {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    padding: 15px;
+    max-width: 1366px;
+    margin: auto;
+    border-bottom: 1px solid $grey-a;
+}
+
+.fav-button {
+    border: none;
+    svg {
+        fill: none;
+        stroke: $white;
+    }
+    &.active {
+        svg {
+            fill: $brand-primary;
+            stroke: none;
+        }
+    }
 }

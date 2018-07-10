@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
       console.log(this.query);
       this._mainService.getMovies(this.query);
     }
-    this._goTo();
+    // this._goTo();
   }
 
   private _goTo() {

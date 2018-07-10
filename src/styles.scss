@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'styles/abstract/variables';
+@import 'styles/vendor/normalize';
+
+// sizes
+// breakpoints
+// layout
+body {
+    background-color: $grey-2;
+}
+
+// typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label {
+    color: $white;
+}
+
+button {
+    color: $white;
+    background-color: transparent;
+    border: 1px solid $brand-primary;
+    border-radius: 5px;
+}
+
+input {
+    background-color: $grey-a;
+    border: 1px solid $white;
+    color: $white;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+// headers

@@ -1,10 +1,6 @@
-<h1>
-    Favs works
+<h1 class="section-header">
+    favorite movies ({{favouriteMoviesLength}})
 </h1>
-
-<p>
-    favourite movies {{favouriteMoviesLength}} // change
-</p>
 
 <app-card *ngFor="let movie of $favMovies | async as list" [inline]="true" [movie]="movie"></app-card>
 

@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="fav-icon" viewBox="-2 -2 36 33">
-    <path d="M15.6,28.1l12.5-12.5c3.5-3.5,3.5-9,0-12.5c-3.5-3.5-9-3.5-12.5,0c-3.5-3.5-9-3.5-12.5,0c-3.5,3.5-3.5,9,0,12.5L15.6,28.1z"
+  <svg:symbol id="fav-icon" viewBox="-2 -2 36 33">
+    <svg:path d="M15.6,28.1l12.5-12.5c3.5-3.5,3.5-9,0-12.5c-3.5-3.5-9-3.5-12.5,0c-3.5-3.5-9-3.5-12.5,0c-3.5,3.5-3.5,9,0,12.5L15.6,28.1z"
     />
-  </symbol>
+    </symbol>
 </svg>
 
 <ng-container *ngIf="!inline; else cardInlineTemplate">
@@ -11,8 +11,8 @@
     <div class="card__body card__body--overlay">
       <div class="card__fav">
         <button class="btn btn--fav" [ngClass]="{'btn--active': movie.favourite}" (click)="addToFav(movie.imdbID)">
-          <svg width="12px" height="12px" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
-            <use xlink:href="#fav-icon" />
+          <svg width="35" height="35" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
+            <svg:use xlink:href="#fav-icon" />
           </svg>
         </button>
       </div>
@@ -28,19 +28,22 @@
   <div class="card card--inline">
     <div class="card__fav">
       <button class="btn btn--fav" [ngClass]="{'btn--active': movie.favourite}" (click)="addToFav(movie.imdbID)">
-        <svg width="12px" height="12px" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
-          <use xlink:href="#fav-icon" />
+        <svg width="35" height="35" preserveAspectRatio="xMidYMid meet" xml:space="preserve">
+          <svg:use xlink:href="#fav-icon" />
         </svg>
       </button>
     </div>
     <img class="card__img" src="{{movie.poster}}" alt="">
     <div class="card__body card__body--overlay">
-      <div class="card__title">
-        <span>{{ movie.title }}</span>
-        <span>{{ movie.year }}</span>
-      </div>
+      <h3 class="card__title">
+        <span class="card__title__title">{{ movie.title }}</span>
+        <span class="card__title__year">({{ movie.year }})</span>
+      </h3>
       <div class="card__type">
-        type: {{ movie.type }}
+        type:
+        <span class="card__type__type">
+          {{ movie.type }}
+        </span>
       </div>
     </div>
   </div>
