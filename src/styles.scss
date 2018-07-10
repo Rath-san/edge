@@ -1,12 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import 'styles/abstract/variables';
 @import 'styles/vendor/normalize';
-
 // sizes
 // breakpoints
 // layout
 body {
     background-color: $grey-2;
+    font-family: 
+        -apple-system, // Chrome < 56 for OS X (San Francisco)
+        BlinkMacSystemFont, // Windows
+        "Segoe UI", // Android
+        "Roboto", // Basic web fallback
+        "Helvetica Neue", Arial, sans-serif, // Emoji fonts
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 // typography
@@ -29,12 +36,9 @@ button {
     outline: none;
     cursor: pointer;
     &:hover,
-    &:active
-     {
+    &:active {
         outline: none;
     }
-
-    
 }
 
 input {
