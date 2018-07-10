@@ -4,13 +4,20 @@
     display: block;
     position: relative;
     display: flex;
+    justify-content: flex-end;
 }
 
 button {
     border-left-width: 0;
     border-radius: 0;
     border-color: $grey;
+    // padding: 6%;
+    width: 35px;
+    background-position: 50%;
+    background-repeat: no-repeat;
     cursor: pointer;
+    background-size: 50%;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg viewBox='0 0 40 40' width='40' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='#707070' d='M39.53 37.24L30 27.72A16.94 16.94 0 0 0 16.94 0 16.94 16.94 0 0 0 5 28.91 16.94 16.94 0 0 0 27.72 30l9.53 9.53a1.62 1.62 0 1 0 2.29-2.29zm-22.59-6.6a13.72 13.72 0 1 1 9.72-4.05 13.66 13.66 0 0 1-9.72 4.05z' /%3e%3c/svg%3e");
 }
 
 input {
