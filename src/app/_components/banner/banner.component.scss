@@ -1,0 +1,12 @@
+$scrollbar-width: 17;
+:host {
+//     display: block;
+//     height: auto;
+}
+
+img {
+    margin-left: -15px;
+    width: calc(100vw - #{$scrollbar-width}px);
+    max-width: calc(1366px + #{$scrollbar-width}px);
+    display: block;
+}
