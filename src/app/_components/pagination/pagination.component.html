@@ -5,15 +5,15 @@
   <li class="list__item">
       <button (click)="goPrev()" [disabled]="firstPageDeactivated">prev</button>
     </li>
-  <li class="list__item">
-    <button (click)="goPage(1)">1</button>
+  <li class="list__item" *ngFor="let pageNumber of visiblePages | async">
+    <button (click)="goPage(pageNumber)">{{pageNumber}}</button>
   </li>
-  <li class="list__item">
+  <!-- <li class="list__item">
     <button (click)="goPage(2)">2</button>
   </li>
   <li class="list__item">
     <button (click)="goPage(3)">3</button>
-  </li>
+  </li> -->
   <li class="list__item">
     <button class="dots">...</button>
   </li>
