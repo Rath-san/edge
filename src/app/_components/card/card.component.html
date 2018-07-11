@@ -7,7 +7,7 @@
 
 <ng-container *ngIf="!inline; else cardInlineTemplate">
   <div class="card">
-    <img class="card__img" src="{{movie.poster}}" alt="">
+    <img class="card__img" src="{{movie.poster | imageNotFound}}" alt="{{movie.title}} poster">
     <div class="card__body card__body--overlay">
       <div class="card__fav">
         <button class="btn btn--fav" [ngClass]="{'btn--active': movie.favourite}" (click)="addToFav(movie.imdbID)">
@@ -33,7 +33,7 @@
         </svg>
       </button>
     </div>
-    <img class="card__img" src="{{movie.poster}}" alt="">
+    <img class="card__img" src="{{movie.poster}}" alt="{{movie.title}} poster">
     <div class="card__body card__body--overlay">
       <h3 class="card__title">
         <span class="card__title__title">{{ movie.title }}</span>

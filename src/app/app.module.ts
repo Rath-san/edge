@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { FormsModule } from '@angular/forms';
 import { FavService } from './_services/fav.service';
+import { ImageNotFoundPipe } from './_pipes/image-not-found.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FavService } from './_services/fav.service';
     SearchComponent,
     CardComponent,
     PaginationComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ImageNotFoundPipe
   ],
   imports: [
     BrowserModule,
