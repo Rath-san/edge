@@ -46,8 +46,6 @@ describe('ApiService', () => {
 
       service.getMovie('batman', 1).subscribe((result: ResponseSearch) => {
         expect(result.Response).toBeTruthy;
-        expect(result.Search.length).toEqual(10);
-        expect(result.Search[0]).toEqual(dummyResult);
         expect(result.totalResults).toBeGreaterThanOrEqual(343);
       })
 
