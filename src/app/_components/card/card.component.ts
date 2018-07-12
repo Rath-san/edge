@@ -11,11 +11,11 @@ export class CardComponent implements OnInit {
 
   @Input() movie:Movie;
 
-  _inline: boolean;
+  private _inline: boolean;
 
   @Input('inline')
-  set setType(v: boolean) {
-    this._inline = v;
+  set setType(value: boolean) {
+    this._inline = value;
   }
 
   constructor(
@@ -29,12 +29,7 @@ export class CardComponent implements OnInit {
     return this._inline;
   }
 
-  // set fav(v: boolean) {
-
-  // }
-
   public addToFav(id: string) {
-    // this._favService.set(id);
     this.movie.favourites(this._favService.set(id));
   }
 

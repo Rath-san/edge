@@ -15,4 +15,4 @@
   <app-card *ngFor="let movie of movies | async as list" [movie]="movie"></app-card>
 </div>
 <app-pagination></app-pagination>
-<app-banner></app-banner>
+<app-banner [bannerContent]="'http://via.placeholder.com/1920x700'"></app-banner>

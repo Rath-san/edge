@@ -1,8 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CardComponent } from './card.component';
-import { Movie, Type } from '../../_models/movie';
+import { Movie } from '../../_models/movie';
+
 import { ImageNotFoundPipe } from '../../_pipes/image-not-found.pipe';
+import { ResponseType } from '../../_models/response';
 
 
 
@@ -12,7 +14,7 @@ describe('CardComponent', () => {
   let component: CardComponent;
   let fixture: ComponentFixture<CardComponent>;
 
-  movie = new Movie('movie title', '1999', 'ttimbdID', Type.movie, 'http url', false);
+  movie = new Movie('movie title', '1999', 'ttimbdID', ResponseType.Movie, 'http url', false);
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

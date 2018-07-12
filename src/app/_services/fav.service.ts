@@ -7,8 +7,9 @@ import { tap } from 'rxjs/operators';
 })
 export class FavService {
 
-
-  $favMovies: BehaviorSubject<any> = new BehaviorSubject<any>(this._readLocalStorage() ? this._readLocalStorage() : []);
+  $favMovies: BehaviorSubject<any> = new BehaviorSubject<any>(
+    this._readLocalStorage() ? this._readLocalStorage() : [] // read local storage for present app 
+  );
 
   constructor() {
     this.$favMovies
@@ -26,18 +27,18 @@ export class FavService {
     let newMovies;
     let added;
 
-    if (currentMovies.some(s => s === id)) {
-      const dupIndex = currentMovies.indexOf(id); //remove from fav
-      currentMovies.splice(dupIndex, 1);
+    if (currentMovies.some((value: string) => value === id)) {
+
+      const dupIndex = currentMovies.indexOf(id);
+      currentMovies.splice(dupIndex, 1); //remove from fav
       newMovies = currentMovies;
-      this.$favMovies.next(newMovies);
       added = false;
     } else {
-      newMovies = [id, ...currentMovies]; //add tofav
+      newMovies = [id, ...currentMovies]; //add to fav
       added = true;
     }
-    this.$favMovies.next(newMovies);
-    return added;
+    this.$favMovies.next(newMovies); // update fav movies value
+    return added; // in card component updates fav status on card (addToFav())
   }
 
   private _updateLocalStorage(x: string[]) {

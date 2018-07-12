@@ -45,10 +45,6 @@ export class PaginationComponent implements OnInit {
   }
 
   public populatePagination(pageNumber: number) {  
-    console.log(pageNumber);
-    console.log(this.pagesCount);
-    
-      
     const currentPage = pageNumber;
     let visiblePages = [];
     for (let index = currentPage - 3; index < currentPage + 3; index++) {      
@@ -59,12 +55,10 @@ export class PaginationComponent implements OnInit {
     }
   }
     goPage(page: number) {
-      console.log(`go to ${page}`);
       this._mainService.$activePage.next(page);
     }
 
     goFirst() {
-      console.log('first');
       this._mainService.$activePage.next(1);
     }
 
@@ -74,13 +68,11 @@ export class PaginationComponent implements OnInit {
     }
 
     goLast() {
-      console.log('last');
       this._mainService.$activePage.next(this.pagesCount);
     }
 
     goNext() {
       let page = this._mainService.$activePage.getValue();
-
       this._mainService.$activePage.next(page + 1);
     }
 

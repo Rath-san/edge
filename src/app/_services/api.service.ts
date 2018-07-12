@@ -1,41 +1,35 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs';
+import { ResponseSearch, ResponseMovieByID } from '../_models/response';
+
+import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  // example
-  // http://www.omdbapi.com/?i=tt3896198&apikey=21108c99
-
-  apiKey: string = '21108c99';
-
-  apiRoot: string = `http://www.omdbapi.com/?apikey=${this.apiKey}`;
+  public API_URL: string = environment.serverUrl;
+  private _API_KEY: string = '21108c99';
+  public API_ROOT: string = `${this.API_URL}?apikey=${this._API_KEY}`;
 
   constructor(
     private _http: HttpClient
   ) { }
 
-  getMovie(title?: string, page?:number) {
-    let params;
-    if (title) {
-      params = {
-        's': title,
-        'page': page
-      }
+  public getMovie(title: string, page: number = 1): Observable<ResponseSearch> {
+    const params = {
+      's': title,
+      'page': `${page}`
     }
-    return this._http.get(this.apiRoot, { params });
+    return this._http.get<ResponseSearch>(this.API_ROOT, { params });
   }
 
-  getMovieByID(id: string) {
-    let params
-    if(id) {
-      params = {
-        'i': id
-      }
+  public getMovieByID(id: string): Observable<ResponseMovieByID> {
+    const params = {
+      'i': id
     }
-    return this._http.get(this.apiRoot, { params });
+    return this._http.get<ResponseMovieByID>(this.API_ROOT, { params });
   }
-
 
 }

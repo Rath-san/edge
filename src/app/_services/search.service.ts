@@ -11,7 +11,7 @@ export class SearchService {
   ) {}
 
   public searchTitle(title?: string) {
-    this._mainService.getMovies(title);
+    this._mainService.getMovies(title, 1);
   }
 
 

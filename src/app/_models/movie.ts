@@ -1,14 +1,10 @@
-export enum Type {
-    game = 'game',
-    movie = 'movie',
-    series = 'series',
-}
+import { ResponseType } from "./response";
 
 export class Movie {
     _title: string;
     _year: string;
     _imdbID: string;
-    _type: Type;
+    _type: ResponseType;
     _poster: string;
     _favourite: boolean;
 
@@ -16,7 +12,7 @@ export class Movie {
         title: string,
         year: string,
         imdbID: string,
-        type: Type,
+        type: ResponseType,
         poster: string,
         favourite: boolean
     ) {
@@ -55,5 +51,4 @@ export class Movie {
     public favourites(v) {
         this._favourite = v;
     }
-
 }
