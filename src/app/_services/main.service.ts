@@ -19,7 +19,7 @@ export class MainService {
   $movies: BehaviorSubject<Movie[]> = new BehaviorSubject<Movie[]>([]);
 
   // searched phrase from search component
-  $searchQuery: BehaviorSubject<string> = new BehaviorSubject<string>('batman');
+  $searchQuery: BehaviorSubject<string> = new BehaviorSubject<string>(null);
 
   // static value 10 resultsin response batch
   resultsPerPage: number = 10;
@@ -29,7 +29,7 @@ export class MainService {
   // count of pages for pagination
   $pagesCount: BehaviorSubject<number> = new BehaviorSubject<number>(null);
   // active page for pagination
-  $activePage: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+  $activePage: BehaviorSubject<number> = new BehaviorSubject<number>(null);
 
   constructor(
     private _apiService: ApiService,
