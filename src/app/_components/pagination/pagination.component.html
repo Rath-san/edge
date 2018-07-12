@@ -1,4 +1,4 @@
-<ul class="list--inline">
+<ul *ngIf="activePage" class="list--inline">
   <li class="list__item">
     <button (click)="goFirst()" [disabled]="firstPageDeactivated">first</button>
   </li>
@@ -6,16 +6,11 @@
       <button (click)="goPrev()" [disabled]="firstPageDeactivated">prev</button>
     </li>
   <li class="list__item" *ngFor="let pageNumber of visiblePages | async">
-    <button (click)="goPage(pageNumber)">{{pageNumber}}</button>
-  </li>
-  <!-- <li class="list__item">
-    <button (click)="goPage(2)">2</button>
+    <button [ngClass]="{'active': activePage === pageNumber}" (click)="goPage(pageNumber)">{{pageNumber}}</button>
   </li>
   <li class="list__item">
-    <button (click)="goPage(3)">3</button>
-  </li> -->
-  <li class="list__item">
-    <button class="dots">...</button>
+    <button (click)="openPageInput()" class="dots">...</button>
+    <input class="page-input" type="number" min="1" *ngIf="pageInputOpen" #pageInput (blur)="gotoSpecificPageOnBlur(pageInput.value)" (keyup)="gotoSpecificPageOnKeyUp(pageInput.value, $event)">
   </li>
   <li class="list__item">
       <button (click)="goNext()" [disabled]="lastPageDeactivated">next</button>

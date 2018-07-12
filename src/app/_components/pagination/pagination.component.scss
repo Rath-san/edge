@@ -6,10 +6,12 @@
 
 .list {
     &--inline {
+        margin: 0 0 30px 0;
         list-style-type: none;
         padding-left: 0;
         text-align: center;
         .list__item {
+            position: relative;
             display: inline-block;
             + .list__item {
                 margin-left: 5px;
@@ -22,6 +24,10 @@ button {
     padding: 8px 16px;
     text-transform: capitalize;
     background-color: $grey-1;
+    &.active {
+        background-color: $brand-primary;
+        color: $white;
+    }
     &.dots {
         border-width: 0px;
         background-color: transparent;
@@ -32,4 +38,14 @@ button {
         background-color: transparent;
         cursor: not-allowed;
     }
+}
+
+.page-input{
+    position: absolute;
+    left: 50%;
+    max-width: 40px;
+    border-radius: .4em;
+    top: 40px;
+    padding: .6em;
+    transform: translateX(-50%);
 }
