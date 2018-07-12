@@ -1,5 +1,5 @@
 <label for="searchInput" class="sr-only">
     search
 </label>
-<input [(ngModel)]="query" type="text" name="" id="searchInput" placeholder="search">
+<input [(ngModel)]="query" type="text" name="" id="searchInput" placeholder="search" (keyup)="updateSearchQueryOnKeyUp($event)">
 <button type="submit" (click)="updateSearchQuery()"></button>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MainService } from '../../_services/main.service';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
   query: string;
 
@@ -16,12 +16,17 @@ export class SearchComponent implements OnInit {
     private _router: Router
   ) { }
 
-  ngOnInit() {
-    // this.updateSearchQuery();
+  updateSearchQuery(): void { //todo simplification
+    if (this.query) {
+      this._mainService.$searchQuery.next(this.query);
+      this._mainService.$activePage.next(1);
+      this._mainService.getMovies(this.query, 1);
+      this._goTo();
+    }
   }
 
-  updateSearchQuery(): void {
-    if (this.query) {
+  updateSearchQueryOnKeyUp(event: KeyboardEvent): void { //todo simplification
+    if (this.query && event.keyCode === 13) {
       this._mainService.$searchQuery.next(this.query);
       this._mainService.$activePage.next(1);
       this._mainService.getMovies(this.query, 1);
