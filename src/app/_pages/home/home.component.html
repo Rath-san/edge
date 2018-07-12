@@ -1,14 +1,14 @@
 <p class="message">
-  <ng-container *ngIf="error; else errorTemplate">
+  <ng-container *ngIf="error; else searchTemplate">
     {{ errors }}
   </ng-container>
-  </p>
-<ng-template #errorTemplate>
-    Search results for "<em><strong>{{ searchQuery | async }}</strong></em>"
-    <br>
-    <small>
-      with total of {{ resultsCount | async }} finds ({{ resultsPages | async}} pages)
-    </small>
+</p>
+<ng-template #searchTemplate>
+  Search results for "<em><strong>{{ searchQuery | async }}</strong></em>"
+  <br>
+  <small>
+    with total of {{ resultsCount | async }} finds ({{ resultsPages | async}} pages)
+  </small>
 </ng-template>
 
 <div class="grid-container">

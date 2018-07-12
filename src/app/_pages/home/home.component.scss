@@ -9,11 +9,24 @@
 .grid-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 60px;
+    grid-gap: 30px;
+    margin-bottom: 30px;
     max-width: 1600px;
+    @media screen and (max-width: $sm) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+    @media screen and (max-width: $md-1) {
+        // grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15px;
+    }
 }
 
 .message {
     color: $brand-primary;
     font-size: 40px;
+    @media screen and (max-width: $sm) {
+        font-size: 20px;
+        margin: .5em 0 1em 0;
+    }
 }
