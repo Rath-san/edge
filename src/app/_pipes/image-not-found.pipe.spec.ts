@@ -4,16 +4,22 @@ describe('ImageNotFoundPipe', () => {
 
   let pipe: ImageNotFoundPipe;
 
-  const imageUrl: string = 'sample url';
-  const expectedValue: string = 'http://via.placeholder.com/270x360';
+  const imageUrlValid: string = 'http://via.placeholder.com/370x460';
+  const imageUrlInvalid: string = 'N/A';
+  const placeholderValue: string = 'http://via.placeholder.com/270x360';
 
   it('create an instance', () => {
     pipe = new ImageNotFoundPipe();
     expect(pipe).toBeTruthy();
   });
 
-  it('should return placeholder imageif url request returns 404', () => {
-    const newUrl = pipe.transform(imageUrl)
-    expect(newUrl).toBe(expectedValue)
-  })
+  it('should return placeholder image if request returns 404', () => {
+    const newUrl = pipe.transform(imageUrlInvalid);
+    expect(newUrl).toBe(placeholderValue);
+  });
+  it('should return original url if request returns url', () => {
+    const newUrl = pipe.transform(imageUrlValid);
+    expect(newUrl).toBe(imageUrlValid);
+  });
+
 });

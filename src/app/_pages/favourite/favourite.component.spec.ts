@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FavouriteComponent } from './favourite.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('FavouriteComponent', () => {
   let component: FavouriteComponent;
@@ -8,7 +10,11 @@ describe('FavouriteComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FavouriteComponent ]
+      declarations: [ FavouriteComponent ],
+      imports:[
+        HttpClientTestingModule
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));
