@@ -17,13 +17,14 @@ export class SearchComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.updateSearchQuery();
+    // this.updateSearchQuery();
   }
 
   updateSearchQuery(): void {
     if (this.query) {
       this._mainService.$searchQuery.next(this.query);
       this._mainService.$activePage.next(1);
+      this._mainService.getMovies(this.query, 1);
       this._goTo();
     }
   }
