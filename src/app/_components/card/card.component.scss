@@ -2,11 +2,14 @@
 @import '../../../styles/abstract/variables';
 .card {
     width: 100%;
-    height: 20vw;
+    height: 26vw;
     display: block;
     overflow: hidden;
     position: relative;
     margin: auto;
+    @media screen and (max-width: $sm) {
+        height: 65vw;
+    }
     &__img {
         width: 100%;
         object-fit: cover;
@@ -40,6 +43,9 @@
         transition: 
             transform 150ms ease-in-out,
             opacity 100ms ease-in;
+        @media screen and (max-width: $sm) {
+            padding: .5em;
+        }
     }
     &:hover {
         .card {
@@ -61,6 +67,9 @@
         border-bottom: 1px solid $grey-a;
         padding: 15px 0;
         height: auto;
+        @media screen and (max-width: $sm) {
+            align-items: center;
+        }
         .card {
             &__fav {
                 align-self: center;
@@ -71,6 +80,9 @@
                 transition: none;
                 position: static;
                 margin-left: 20px;
+                @media screen and (max-width: $sm) {
+                    margin-left: 10px;
+                }
             }
             &__body {
                 transition: none;
@@ -81,23 +93,32 @@
                 justify-content: center;
                 margin-left: 20px;
             }
-            &__title {
+            &__header {
                 margin: 0;
                 font-size: 30px;
                 transform: none;
                 opacity: 1;
                 padding: 0;
+                @media screen and (max-width: $sm) {
+                    font-size: 1em;
+                }
                 &__title {
                     font-weight: bold;
+                    @media screen and (max-width: $sm) {
+                        display: block;
+                    }
                 }
                 &__year {
                     font-weight: lighter;
                     color: $grey;
                     display: inline-block;
                     margin-left: 10px;
+                    @media screen and (max-width: $sm) {
+                        margin-left: 0;
+                    }
                 }
             }
-            &__type {
+            &__footer {
                 color: $brand-primary;
                 &__type {
                     color: $white;
