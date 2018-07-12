@@ -7,6 +7,9 @@
     margin: auto;
     border-bottom: 1px solid $grey-a;
     align-items: center;
+    @media screen and (max-width: $md) {
+        flex-direction: column;
+    }
     > * {
         flex-grow: 0;
         flex-basis: 33%;
